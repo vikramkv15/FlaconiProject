@@ -1,7 +1,0 @@
-com\flaconi\pageObjects\FlaconiMainPage.class
-com\flaconi\pageObjects\FlaconiCartPage.class
-com\flaconi\pageObjects\FlaconiSearchPage.class
-com\flaconi\testRequistie\ApplicationInfoLog.class
-com\flaconi\pageObjects\FlaconiPerfumePage.class
-com\flaconi\testRequistie\DriverInitiate.class
-com\flaconi\testRequistie\TestDataValueReader.class

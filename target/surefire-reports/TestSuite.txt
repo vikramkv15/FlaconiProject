@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 1.666 s <<< FAILURE! - in TestSuite
-DriverInitiation(com.flaconi.TestCase.AddPerfumeToCartTestCase)  Time elapsed: 1.354 s  <<< FAILURE!
-java.lang.IllegalStateException: The driver executable does not exist: C:\Flaconi\FlaconiProjectC:\Project\Resources\driver\chromedriver.exe
-	at com.flaconi.TestCase.AddPerfumeToCartTestCase.DriverInitiation(AddPerfumeToCartTestCase.java:33)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.98 s - in TestSuite

@@ -21,7 +21,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-
 public class AddPerfumeToCartTestCase {
 
 	static WebDriver driver;
@@ -51,9 +50,9 @@ public class AddPerfumeToCartTestCase {
 
 		// Enter the Perfume name to be searched
 		FlaconiMainPage.searchContainer(driver).sendKeys(perfumeNametoadd);
-		System.out.println(perfumeNametoadd + " perfume to be added to cart is entered in the search container");		
-		
-		//Closing the cookie pop up
+		System.out.println(perfumeNametoadd + " perfume to be added to cart is entered in the search container");
+
+		// Closing the cookie pop up
 		if (FlaconiPerfumePage.cookieCloseButton(driver).isDisplayed()) {
 			FlaconiPerfumePage.cookieCloseButton(driver).click();
 		}
@@ -77,22 +76,23 @@ public class AddPerfumeToCartTestCase {
 		// Adding the perfume to cart from the perfume page.
 		FlaconiPerfumePage.perfumeAddCartFiftyMl(driver).click();
 		ApplicationInfoLog.loggingInfo(log, "Added the perfume to the cart");
-		
+
 		// Verifying the pop up for perfume added is displayed
 		FlaconiPerfumePage.perfumeAddCartPopUp(driver).isDisplayed();
 		System.out.println(FlaconiPerfumePage.perfumeAddCartPopUp(driver).getText());
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);		
-		
-		/* // Clicking on the button to navigate to cart
-		  FlaconiPerfumePage.addCartButtonInPopUp(driver).click();
-		  ApplicationInfoLog.loggingInfo(log, "Cart is opened");*/
-		 
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		/*
+		 * // Clicking on the button to navigate to cart
+		 * FlaconiPerfumePage.addCartButtonInPopUp(driver).click();
+		 * ApplicationInfoLog.loggingInfo(log, "Cart is opened");
+		 */
 
 		// TO Be removed once the issue of pop up is resolved
 		driver.navigate().refresh();
 		FlaconiSearchPage.CartIcon(driver).click();
 		ApplicationInfoLog.loggingInfo(log, "Cart is opened");
-		
+
 		// Assertion if the perfume available in the cart
 		String expectedperfumeInCart = FlaconiCartPage.cartDetails(driver).getAttribute("alt");
 

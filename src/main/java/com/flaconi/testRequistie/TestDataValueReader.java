@@ -10,7 +10,7 @@ public class TestDataValueReader {
 
 	public static String readPropFile(String propKey) {
 		String propData = null;
-		File file = new File("C:\\Project\\dataFile\\datafile.properties");
+		File file = new File("C:\\Flaconi\\FlaconiProject\\dataFile\\datafile.properties");
 		FileInputStream fileInput = null;
 		try {
 			fileInput = new FileInputStream(file);

@@ -12,14 +12,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class GetScreenShot {
-
+	
 	public static WebDriver takeSnapShot(WebDriver driver, String screenshotname) throws Exception {
+		
 		
 		java.util.Date date = new java.util.Date();
 		SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-yyyy h-mm-ssa");
 		String timeStamp= sdf.format(new Timestamp(date.getTime()));
-		String folder =System.getProperty("user.dir")+TestDataValueReader.readPropFile("EvidencePath");
+		String folder = TestDataValueReader.readPropFile("EvidencePath");
 		Thread.sleep(200);
+		
+		validateFolderExists(folder);
 		
 		String path = folder+"\\"+screenshotname+" "+timeStamp+".png" ;
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -40,6 +43,11 @@ public class GetScreenShot {
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		return driver;
-
+	}
+	
+	private static void validateFolderExists(String folderPath) {
+		File folder1 = new File(folderPath);
+		if (!folder1.exists())
+			folder1.mkdir();
 	}
 }
