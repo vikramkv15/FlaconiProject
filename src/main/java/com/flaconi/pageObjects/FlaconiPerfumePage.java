@@ -31,9 +31,9 @@ public class FlaconiPerfumePage {
 		WebElement perfumeAddCartPopUpHeader = driver.findElement(By.cssSelector("div#htmlData.columns"));
 		return perfumeAddCartPopUpHeader;
 	}
-	
+		
 	public static WebElement addCartButtonInPopUp(WebDriver driver) {
-		WebElement addCartButton = driver.findElement(By.xpath("//a[@href='https://www.flaconi.de/warenkorb/']"));
+		WebElement addCartButton = driver.findElement(By.xpath("//*[@id=\"htmlData\"]/div[4]/div/a"));
 		return addCartButton;
 	}
 	

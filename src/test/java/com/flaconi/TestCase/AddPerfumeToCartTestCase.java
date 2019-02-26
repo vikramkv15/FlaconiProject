@@ -7,10 +7,12 @@ import com.flaconi.pageObjects.FlaconiMainPage;
 import com.flaconi.pageObjects.FlaconiPerfumePage;
 import com.flaconi.pageObjects.FlaconiSearchPage;
 import com.flaconi.testRequistie.ApplicationInfoLog;
-import com.flaconi.testRequistie.DriverInitiate;
+import com.flaconi.testRequistie.BaseTest;
+import com.flaconi.testRequistie.GetScreenShot;
 import com.flaconi.testRequistie.TestDataValueReader;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +32,7 @@ public class AddPerfumeToCartTestCase {
 		Logger log = Logger.getLogger("devpinoyLogger");
 		try {
 
-			driver = DriverInitiate.initiateDriver();
+			driver = BaseTest.initiateDriver();
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();
@@ -39,16 +41,17 @@ public class AddPerfumeToCartTestCase {
 	}
 
 	@Test
-	public void flaconiUserJourney() {
+	public void flaconiUserJourney() throws Exception {
 		Logger log = Logger.getLogger("devpinoyLogger");
+		String perfumeNametoadd = TestDataValueReader.readPropFile("expectedPerfumeName");
 
 		// Load the Flaconi URL from the properties file
 		driver.get(TestDataValueReader.readPropFile("url"));
 		ApplicationInfoLog.loggingInfo(log, "Flaconi Url is loaded");
 
 		// Enter the Perfume name to be searched
-		FlaconiMainPage.searchContainer(driver).sendKeys(TestDataValueReader.readPropFile("expectedPerfumeName"));
-		ApplicationInfoLog.loggingInfo(log, "Perfume to be added to cart is entered in the search container");
+		FlaconiMainPage.searchContainer(driver).sendKeys(perfumeNametoadd);
+		System.out.println(perfumeNametoadd + " perfume to be added to cart is entered in the search container");		
 		
 		//Closing the cookie pop up
 		if (FlaconiPerfumePage.cookieCloseButton(driver).isDisplayed()) {
@@ -69,6 +72,7 @@ public class AddPerfumeToCartTestCase {
 			}
 		}
 		ApplicationInfoLog.loggingInfo(log, "Selected the perfume to be added to cart");
+		GetScreenShot.takeSnapShot(driver, "PerfumeSelected");
 
 		// Adding the perfume to cart from the perfume page.
 		FlaconiPerfumePage.perfumeAddCartFiftyMl(driver).click();
@@ -77,12 +81,12 @@ public class AddPerfumeToCartTestCase {
 		// Verifying the pop up for perfume added is displayed
 		FlaconiPerfumePage.perfumeAddCartPopUp(driver).isDisplayed();
 		System.out.println(FlaconiPerfumePage.perfumeAddCartPopUp(driver).getText());
-				
-		/*
-		 * // Clicking on the button to navigate to cart
-		 * FlaconiPerfumePage.addCartButtonInPopUp(driver).click();
-		 * ApplicationInfoLog.loggingInfo(log, "Cart is opened");
-		 */
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);		
+		
+		/* // Clicking on the button to navigate to cart
+		  FlaconiPerfumePage.addCartButtonInPopUp(driver).click();
+		  ApplicationInfoLog.loggingInfo(log, "Cart is opened");*/
+		 
 
 		// TO Be removed once the issue of pop up is resolved
 		driver.navigate().refresh();
@@ -92,10 +96,10 @@ public class AddPerfumeToCartTestCase {
 		// Assertion if the perfume available in the cart
 		String expectedperfumeInCart = FlaconiCartPage.cartDetails(driver).getAttribute("alt");
 
-		Assert.assertEquals(expectedperfumeInCart, TestDataValueReader.readPropFile("expectedPerfumeName"));
+		Assert.assertEquals(expectedperfumeInCart, perfumeNametoadd);
 		System.out.println(expectedperfumeInCart + " perfume found in the cart");
 		ApplicationInfoLog.loggingInfo(log, "Expected Perfume is found in the Cart");
-
+		GetScreenShot.takeSnapShot(driver, "PerfumeInCart");
 	}
 
 	@AfterTest
