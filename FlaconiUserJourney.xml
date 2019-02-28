@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FlaconiUserJourney" parallel="none" allow-return-values="true">
+  <test thread-count="5" name="FlaconiUserJourneyTest">
+    <classes>
+      <class name="com.flaconi.TestCase.AddPerfumeToCartTestCase"/>
+    </classes>
+  </test> 
+</suite> 

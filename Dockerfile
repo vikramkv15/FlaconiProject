@@ -1,7 +1,19 @@
 FROM openjdk:8-jre-slim
 
-# Add the jar with all the dependencies
-ADD  target/UserJourney-0.0.1-SNAPSHOT.jar /usr/share/tag/UserJourney-0.0.1-SNAPSHOT.jar
+WORKDIR /usr/share/tag
+
+# Add the project jar & copy dependencies
+ADD  target/selenium-docker.jar selenium-docker.jar
+ADD  target/selenium-docker-tests.jar selenium-docker-tests.jar
+ADD  target/libs libs
+
+# Add the suite xmls
+ADD FlaconiUserJourney.xml FlaconiUserJourney.xml
 
 # Command line to execute the test
-ENTRYPOINT ["/usr/bin/java", "-cp", "/usr/share/tag/UserJourney-0.0.1-SNAPSHOT.jar", "org.testng.TestNG", "-testclass", "com.flaconi.TestCase.AddPerfumeToCartTestCase"]
+# Expects below ennvironment variables
+# BROWSER = chrome
+# MODULE  = FlaconiUserJourney
+# GRIDHOST = selenium hub hostname / ipaddress
+
+ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DseleniumHubHost=$SELENIUM_HUB -Dbrowser=$BROWSER org.testng.TestNG $MODULE

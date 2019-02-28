@@ -1,0 +1,7 @@
+27/02/2019 19:22:06 devpinoyLogger Chrome Driver Initiated
+27/02/2019 19:22:32 devpinoyLogger Flaconi Url is loaded
+27/02/2019 19:22:36 devpinoyLogger Click on the search button
+27/02/2019 19:22:40 devpinoyLogger Selected the perfume to be added to cart
+27/02/2019 19:22:41 devpinoyLogger Added the perfume to the cart
+27/02/2019 19:22:46 devpinoyLogger Cart is opened
+27/02/2019 19:22:46 devpinoyLogger Expected Perfume is found in the Cart

@@ -9,8 +9,9 @@ import java.util.Properties;
 public class TestDataValueReader {
 
 	public static String readPropFile(String propKey) {
+		String dirPath = System.getProperty("user.dir");
 		String propData = null;
-		File file = new File("C:\\Flaconi\\FlaconiProject\\dataFile\\datafile.properties");
+		File file = new File(dirPath+"\\src\\main\\resources\\datafile.properties");
 		FileInputStream fileInput = null;
 		try {
 			fileInput = new FileInputStream(file);
