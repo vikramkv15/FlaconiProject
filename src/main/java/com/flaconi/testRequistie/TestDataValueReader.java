@@ -24,6 +24,7 @@ public class TestDataValueReader {
 			prop.load(fileInput);
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("Configuration properties file cannot be found");
 		}
 
 		propData = prop.getProperty(propKey);

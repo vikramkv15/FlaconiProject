@@ -21,7 +21,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class AddPerfumeToCartTestCase {
+public class AddPerfumeToCartTestCase extends BaseTest {
 
 	static WebDriver driver;
 
