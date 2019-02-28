@@ -9,14 +9,16 @@ public class BaseTest {
 	
 	static WebDriver driver;
 	public static WebDriver initiateDriver() throws  InterruptedException{
-	
-	System.setProperty("webdriver.chrome.driver",PropertyManager.getInstance().getdriverPath());
+	String drivePath = System.getProperty("user.dir")+PropertyManager.getInstance().getdriverPath();
+		
+	System.setProperty("webdriver.chrome.driver",drivePath);
 	ChromeOptions options= new ChromeOptions();
 	Boolean headlessvalue= Boolean.valueOf(PropertyManager.getInstance().getHeadlessValue());
 	options.setHeadless(headlessvalue);
 	driver = new ChromeDriver(options);
 	driver.manage().window().maximize();
 	return driver;
+	
 	}
 	
 }

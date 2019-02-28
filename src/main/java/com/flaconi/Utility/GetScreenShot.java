@@ -19,7 +19,7 @@ public class GetScreenShot {
 		java.util.Date date = new java.util.Date();
 		SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-yyyy h-mm-ssa");
 		String timeStamp= sdf.format(new Timestamp(date.getTime()));
-		String folder = PropertyManager.getInstance().getEvidencePath();
+		String folder = System.getProperty("user.dir")+PropertyManager.getInstance().getEvidencePath();
 		Thread.sleep(200);
 		
 		validateFolderExists(folder);
@@ -46,8 +46,8 @@ public class GetScreenShot {
 	}
 	
 	private static void validateFolderExists(String folderPath) {
-		File folder1 = new File(folderPath);
-		if (!folder1.exists())
-			folder1.mkdir();
+		File evidences = new File(folderPath);
+		if (!evidences.exists())
+			evidences.mkdir();
 	}
 }

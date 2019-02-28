@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class FlaconiPerfumePage {
-	WebDriver driver = null;
 
 	public static WebElement perfumeAddCartThirtyMl(WebDriver driver) {
 		WebElement perfumeAddCartThirtyMlButton = driver.findElement(By.xpath("//*[@id=\"productAddToCartForm-20101922\"]/button"));

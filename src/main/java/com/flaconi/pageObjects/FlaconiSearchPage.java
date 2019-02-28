@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class FlaconiSearchPage {
-	WebDriver driver = null;
 
 	public static List<WebElement> searchPerfumeList(WebDriver driver) {
 		WebElement perfumecontainer = driver.findElement(By.xpath("//*[@id='multi-filter']//following-sibling::ul"));
