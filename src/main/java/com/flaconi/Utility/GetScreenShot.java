@@ -1,4 +1,4 @@
-package com.flaconi.testRequistie;
+package com.flaconi.Utility;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class GetScreenShot {
 		java.util.Date date = new java.util.Date();
 		SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-yyyy h-mm-ssa");
 		String timeStamp= sdf.format(new Timestamp(date.getTime()));
-		String folder = TestDataValueReader.readPropFile("EvidencePath");
+		String folder = PropertyManager.getInstance().getEvidencePath();
 		Thread.sleep(200);
 		
 		validateFolderExists(folder);

@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="FlaconiUserJourney" duration-ms="103391" started-at="2019-02-28T08:15:57Z" finished-at="2019-02-28T08:17:40Z">
+  <suite name="FlaconiUserJourney" duration-ms="40608" started-at="2019-02-28T14:55:37Z" finished-at="2019-02-28T14:56:18Z">
     <groups>
     </groups>
-    <test name="FlaconiUserJourneyTest" duration-ms="103391" started-at="2019-02-28T08:15:57Z" finished-at="2019-02-28T08:17:40Z">
+    <test name="FlaconiUserJourneyTest" duration-ms="40608" started-at="2019-02-28T14:55:37Z" finished-at="2019-02-28T14:56:18Z">
       <class name="com.flaconi.TestCase.AddPerfumeToCartTestCase">
-        <test-method status="PASS" signature="DriverInitiation()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@6574b225]" name="DriverInitiation" is-config="true" duration-ms="28840" started-at="2019-02-28T08:15:57Z" finished-at="2019-02-28T08:16:26Z">
+        <test-method status="PASS" signature="DriverInitiation()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@174d20a]" name="DriverInitiation" is-config="true" duration-ms="6136" started-at="2019-02-28T14:55:37Z" finished-at="2019-02-28T14:55:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DriverInitiation -->
-        <test-method status="PASS" signature="flaconiUserJourney()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@6574b225]" name="flaconiUserJourney" duration-ms="72137" started-at="2019-02-28T08:16:26Z" finished-at="2019-02-28T08:17:38Z">
+        <test-method status="PASS" signature="flaconiUserJourney()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@174d20a]" name="flaconiUserJourney" duration-ms="33756" started-at="2019-02-28T14:55:43Z" finished-at="2019-02-28T14:56:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flaconiUserJourney -->
-        <test-method status="PASS" signature="DriverClose()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@6574b225]" name="DriverClose" is-config="true" duration-ms="2333" started-at="2019-02-28T08:17:38Z" finished-at="2019-02-28T08:17:40Z">
+        <test-method status="PASS" signature="DriverExit()[pri:0, instance:com.flaconi.TestCase.AddPerfumeToCartTestCase@174d20a]" name="DriverExit" is-config="true" duration-ms="689" started-at="2019-02-28T14:56:17Z" finished-at="2019-02-28T14:56:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DriverClose -->
+        </test-method> <!-- DriverExit -->
       </class> <!-- com.flaconi.TestCase.AddPerfumeToCartTestCase -->
     </test> <!-- FlaconiUserJourneyTest -->
   </suite> <!-- FlaconiUserJourney -->
