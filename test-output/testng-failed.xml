@@ -6,8 +6,7 @@
       <class name="com.flaconi.TestCase.AddPerfumeToCartTestCase">
         <methods>
           <include name="flaconiUserJourney"/>
-          <include name="DriverInitiation"/>
-          <include name="DriverExit"/>
+          <include name="closeDriver"/>
         </methods>
       </class> <!-- com.flaconi.TestCase.AddPerfumeToCartTestCase -->
     </classes>

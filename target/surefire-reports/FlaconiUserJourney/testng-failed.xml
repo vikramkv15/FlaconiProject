@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [FlaconiUserJourney]" allow-return-values="true">
+  <test thread-count="5" verbose="0" name="FlaconiUserJourneyTest(failed)">
+    <classes>
+      <class name="com.flaconi.TestCase.AddPerfumeToCartTestCase">
+        <methods>
+          <include name="flaconiUserJourney"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.flaconi.TestCase.AddPerfumeToCartTestCase -->
+    </classes>
+  </test> <!-- FlaconiUserJourneyTest(failed) -->
+</suite> <!-- Failed suite [FlaconiUserJourney] -->
